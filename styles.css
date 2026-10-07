@@ -164,7 +164,7 @@ h1 { font-weight: 400; }
 .photo img { width: 100%; height: 100%; object-fit: cover; }
 
 /* ---------- Hero body (183) ---------- */
-.hero-body { background: var(--ink); color: var(--paper); padding: 32px var(--gutter) 20px; } /* same 32 as the other dark bands */
+.hero-body { background: var(--ink); color: var(--paper); padding: 24px var(--gutter); } /* equal above and below: the figure line leaves ~6px on top, the last text line ~6px below */
 .fact { display: grid; gap: 4px; }
 .fact__figure { font-size: 40px; line-height: 40px; font-weight: 500; letter-spacing: -0.04em; color: var(--gold); }
 .fact__text { font-size: 17px; line-height: 25px; font-weight: 500; }
@@ -454,7 +454,7 @@ a.more__head { color: inherit; text-decoration: none; }
 a.more__head .more__value { color: var(--text-primary); font-weight: 500; } /* a link reads like the other links: 17/500, ink */
 a.more__head .rowlink__icon { color: var(--ink); }
 
-.serve { margin-top: 24px; display: flex; gap: 24px; padding: 32px var(--gutter) 20px; background: var(--ink); color: var(--paper); }
+.serve { margin-top: 24px; display: flex; gap: 24px; padding: 24px var(--gutter); background: var(--ink); color: var(--paper); }
 .serve .fact { min-width: 0; }
 .pairs--loose { gap: 24px; }
 .pairs__sub { display: block; margin-top: 2px; font-size: 15px; line-height: 22px; color: var(--text-secondary); }
