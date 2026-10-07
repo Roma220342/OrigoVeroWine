@@ -502,3 +502,9 @@ h1, h2, h3, .section__title { text-wrap: balance; }
 .video__cap { display: grid; gap: 2px; }
 .video__title { font-size: 17px; line-height: 25px; font-weight: 500; }
 .video__meta { font-size: 15px; line-height: 22px; color: var(--text-secondary); }
+
+/* ---------- Notice: a short state of this passport, right under the name ---------- */
+.notice { margin-top: 16px; display: grid; gap: 4px; padding: 12px; border-radius: var(--r); background: var(--surface-subtle); }
+.notice__title { font-size: 17px; line-height: 25px; font-weight: 500; }
+.notice--warn .notice__title { color: var(--text-error); }
+.notice__text { font-size: 15px; line-height: 22px; color: var(--text-secondary); }
