@@ -454,7 +454,7 @@
       unfocus(); fit(true, 1300);
       setRunning(false);
     };
-    return { map, markers, fit, move, rest, drawAll, focus, unfocus, play, finish, legMs, at: () => at, isRunning: () => running, onState: (f) => { onState = f; } };
+    return { map, markers, pts, trail: (list) => progress.setLatLngs(list), fit, move, rest, drawAll, focus, unfocus, play, finish, legMs, at: () => at, isRunning: () => running, onState: (f) => { onState = f; } };
   };
 
   /* In the page */
@@ -494,10 +494,11 @@
   mapSheet.setAttribute('tabindex', '-1');
   let full = null;
   let cardH = 250;
-  let current = LAST;
+  let current = 0;
   let mapClosing = false;
 
   const selectStep = (i, { instant = false } = {}) => {
+    const prev = current;
     current = Math.max(0, Math.min(LAST, i));
     const s = stepData[current];
     mapTitle.textContent = s.title;
@@ -509,7 +510,11 @@
     if (full) {
       full.rest(current === LAST);
       const ms = instant ? 0 : full.legMs(full.at(), s);
-      full.move({ lat: s.lat, lng: s.lng }, ms);
+      // The ink trail shows the way travelled up to the selected step, and follows the dot between steps.
+      const base = full.pts.slice(0, Math.min(prev, current) + 1);
+      const target = current;
+      full.move({ lat: s.lat, lng: s.lng }, ms, () => full.trail([...base, [full.at().lat, full.at().lng]]))
+        .then(() => { if (current === target) full.trail(full.pts.slice(0, target + 1)); });
       if (!instant) full.focus(current, true, ms);
     }
   };
@@ -528,13 +533,12 @@
       cardH = $('.map-card').offsetHeight;
       mapSheet.style.setProperty('--card-h', cardH + 'px');
       full = createMap(L, $('#map-full'), true, cardH + 32);
-      full.drawAll();
       full.markers.forEach((m, i) => m.on('click', () => selectStep(i)));
     }
     full.map.invalidateSize();
     full.fit(false);
     full.unfocus();
-    selectStep(LAST, { instant: true });
+    selectStep(0, { instant: true }); // opens at the first step with the whole route in view; Next walks forward to now
     void mapSheet.offsetHeight;
     mapSheet.classList.add('is-in');
   };
