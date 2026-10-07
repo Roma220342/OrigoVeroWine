@@ -71,9 +71,9 @@
           <p class="verified__status"><svg class="icon verified__check" aria-hidden="true"><use href="#i-check"/></svg><span>Digital passport active</span></p>
         </div>
         <div class="notice notice--warn">
-          <p class="notice__title">One temperature reading was too warm</p>
-          <p class="notice__text">24.5&nbsp;°C on 30 Jan 2026, 1 of 6 readings.</p>
-          <a class="rowlink rowlink--in" href="#coldchain"><span>See the cold chain</span><svg class="glyph glyph--24 rowlink__icon" aria-hidden="true"><use href="#g-down"/></svg></a>
+          <p class="notice__title">One warm temperature reading</p>
+          <p class="notice__text">24.5&nbsp;°C on 30 Jan 2026</p>
+          <a class="rowlink rowlink--in" href="#coldchain"><span>See the temperature record</span><svg class="glyph glyph--24 rowlink__icon" aria-hidden="true"><use href="#g-down"/></svg></a>
         </div>
       </section>
 
@@ -84,11 +84,11 @@
 
       <!-- Drinking window: the first peak of the page -->
       <div class="hero-body">
-        <dl class="keyfacts" aria-label="Key facts">
-          <div><dt>Grapes</dt><dd>Merlot, Cabernet Franc</dd></div>
-          <div><dt>Region</dt><dd>Saint-Émilion, France</dd></div>
-          <div><dt>Alcohol</dt><dd>14%</dd></div>
-        </dl>
+        <section class="fact" aria-label="Vintage">
+          <p class="fact__text">Vintage</p>
+          <p class="fact__figure">2019</p>
+          <p class="fact__date">Merlot, Cabernet Franc</p>
+        </section>
       </div>
 
       <!-- Details -->
@@ -116,16 +116,16 @@
       </section>
 
       <!-- Tasting & service -->
-      <section class="section section--eol" id="tasting" aria-labelledby="tasting-title">
-        <div class="eol__head">
+      <section class="section section--module" id="tasting" aria-labelledby="tasting-title">
+        <div class="module__head">
           <h2 class="section__title" id="tasting-title">Tasting &amp; service</h2>
           <p class="section__lead">Curated by Château Fontclair.</p>
         </div>
-        <div class="serve">
-          <div class="fact"><p class="fact__figure">16–18&nbsp;°C</p><p class="fact__text">Serve at</p></div>
-          <div class="fact"><p class="fact__figure">2&nbsp;hours</p><p class="fact__text">Decant first</p></div>
+        <div class="highlight">
+          <div class="fact"><p class="fact__text">Serve at</p><p class="fact__figure">16–18&nbsp;°C</p></div>
+          <div class="fact"><p class="fact__text">Decant first</p><p class="fact__figure">2&nbsp;hours</p></div>
         </div>
-        <div class="eol__body">
+        <div class="module__body">
           <dl class="pairs pairs--loose">
             <div><dt>Tasting</dt><dd>Deep ruby. Notes of dark cherry, plum, cedar, graphite and earthy minerality. Long, silky finish.</dd></div>
             <div><dt>Serving</dt><dd>Decant 2 hours before serving. Optimal serving temperature 16–18&nbsp;°C. Use a large Bordeaux glass.</dd></div>
@@ -233,13 +233,16 @@
           </li>
         </ol>
 
-        <!-- Cold chain: a calm card for the one flagged reading, the evidence on request, then the action -->
+        <!-- Temperature record: a plain summary, the readings on request, then the action -->
         <div class="coldchain" id="coldchain">
-          <h3 class="group">Cold chain</h3>
+          <h3 class="group">Temperature record</h3>
           <div class="alert">
-            <p class="alert__status">Temperature excursion detected, contact brand</p>
-            <p class="alert__value"><strong>24.5&nbsp;°C</strong> on 30 Jan 2026, 1 of 6 readings</p>
-            <p class="alert__note">One reading does not show how long the wine was warm.</p>
+            <p class="alert__status">One warm reading</p>
+            <dl class="alert__rows">
+              <div><dt>30 Jan 2026</dt><dd class="alert__flag">24.5&nbsp;°C</dd></div>
+              <div><dt>The other five</dt><dd>11.8 to 13.5&nbsp;°C</dd></div>
+            </dl>
+            <p class="alert__note">Long warmth can age wine faster and dull its taste. One reading does not show how long this wine was warm. If you are unsure, ask the brand.</p>
           </div>
           <details class="more">
             <summary class="more__head"><span class="more__label">All readings</span><span class="more__value">6 readings</span><svg class="glyph glyph--24 more__chevron" aria-hidden="true"><use href="#g-chevron"/></svg></summary>

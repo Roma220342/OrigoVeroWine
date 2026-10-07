@@ -11,7 +11,7 @@ Content comes only from the product page on origovero.com. The wording of the co
 | Key fact | What it is: 85% Merlot, with 15% Cabernet Franc under it. The region, class and vintage are already in the title |
 | Actions | Cold chain (scrolls down this page, arrow down), I need assistance and Find a retailer (other sites, arrow up-right) |
 | Details | Figures, rows and the EU Wine Label link |
-| Tasting & service | One block: a black band with serving temperature and decanting, then Tasting, Serving, Pairings, Cellaring |
+| Tasting & service | One block: a highlight band with serving temperature and decanting, then Tasting, Serving, Pairings, Cellaring |
 | Journey | Seven steps; four in Bordeaux are spaced on a ring around the city, then Paris, Le Havre, New York. Step 6 is placed at Le Havre, the departure port named in the step text |
 | Cold chain | Closes the Journey: the flagged reading (24.5 °C, 30 Jan 2026) in a tinted card, all six readings on request |
 | Specifications | Alcohol, bottle size, vintage, rows, and the EU Wine Label link |

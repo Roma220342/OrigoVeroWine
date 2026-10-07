@@ -582,4 +582,6 @@
       btn.replaceWith(frame);
     });
   });
+  /* The notice under the name jumps to the temperature record and opens the readings. */
+  $$('a[href="#coldchain"]').forEach((a) => a.addEventListener('click', () => { const d = $('#coldchain details'); if (d) d.open = true; }));
 })();

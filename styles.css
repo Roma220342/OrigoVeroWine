@@ -165,10 +165,6 @@ h1 { font-weight: 400; }
 
 /* ---------- Hero body (183) ---------- */
 .hero-body { background: var(--ink); color: var(--paper); padding: 28px var(--gutter); } /* equal above and below: the figure line leaves ~6px on top, the last text line ~6px below */
-.fact { display: grid; gap: 4px; }
-.fact__figure { font-size: 40px; line-height: 40px; font-weight: 500; letter-spacing: -0.04em; color: var(--gold); }
-.fact__text { font-size: 17px; line-height: 25px; font-weight: 500; }
-.fact__date { font-size: 15px; line-height: 22px; color: rgba(255, 255, 255, 0.72); }
 
 /* ---------- Sections ---------- */
 /* An anchor jump leaves 36px between the sticky header and the section title (section top is 72px above its title). */
@@ -184,7 +180,7 @@ h1 { font-weight: 400; }
 .step__node { display: flex; justify-content: center; width: 14px; padding-top: 4px; }
 .step__dot { width: 10px; height: 10px; border-radius: 50%; background: var(--ink); }
 .timeline { margin-top: 24px; }
-.eol__body .timeline { margin-top: 0; }
+.module__body .timeline { margin-top: 0; }
 .step__line { flex: 1; width: 2px; background: var(--border-default); }
 .step--current .step__node { width: 18px; padding-top: 2px; }
 .step--current .step__dot { width: 18px; height: 18px; background: var(--gold); border: 2px solid var(--ink); }
@@ -298,13 +294,9 @@ h1 { font-weight: 400; }
 .block__link { font-size: 17px; line-height: 25px; font-weight: 500; }
 
 /* ---------- End of life: "Continues as" is a second peak, then the last steps ---------- */
-.section--eol { padding: 0; }
-.eol__head { padding: 72px var(--gutter) 0; }
-.continues { margin-top: 24px; display: grid; gap: 6px; padding: 28px var(--gutter); background: var(--ink); color: var(--paper); }
-.continues__label { font-size: 15px; line-height: 22px; font-weight: 500; color: var(--gold); }
-.continues__name { font-size: 20px; line-height: 26px; font-weight: 500; }
-.continues__sub { font-size: 17px; line-height: 25px; color: rgba(255, 255, 255, 0.72); }
-.eol__body { padding: 24px var(--gutter) 0; }
+.section--module { padding: 0; }
+.module__head { padding: 72px var(--gutter) 0; }
+.module__body { padding: 24px var(--gutter) 0; }
 .note { margin-top: 40px; display: grid; gap: 4px; }
 .note + .pairs { margin-top: 20px; }
 .note__title { font-size: 17px; line-height: 25px; font-weight: 500; }
@@ -453,8 +445,6 @@ a.more__head { color: inherit; text-decoration: none; }
 a.more__head .more__value { color: var(--text-primary); font-weight: 500; } /* a link reads like the other links: 17/500, ink */
 a.more__head .rowlink__icon { color: var(--ink); }
 
-.serve { margin-top: 24px; display: flex; gap: 24px; padding: 28px var(--gutter); background: var(--ink); color: var(--paper); }
-.serve .fact { min-width: 0; }
 .pairs--loose { gap: 24px; }
 .pairs__sub { display: block; margin-top: 2px; font-size: 15px; line-height: 22px; color: var(--text-secondary); }
 .step__actor { font-size: 15px; line-height: 22px; color: var(--text-secondary); }
@@ -463,10 +453,13 @@ a.more__head .rowlink__icon { color: var(--ink); }
 
 .coldchain { margin-top: 48px; scroll-margin-top: calc(var(--header-h) + 8px); }
 .coldchain .group { margin: 0 0 12px; }
-.alert { display: grid; gap: 4px; padding: 12px; border-radius: var(--r); background: var(--surface-subtle); }
+.alert { display: grid; gap: 8px; padding: 12px; border-radius: var(--r); background: var(--surface-subtle); }
 .alert__status { font-weight: 500; line-height: 25px; color: var(--text-error); }
-.alert__value { font-size: 17px; line-height: 25px; }
-.alert__value strong { font-weight: 500; }
+.alert__rows { margin: 0; display: grid; gap: 4px; }
+.alert__rows > div { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 12px; align-items: baseline; }
+.alert__rows dt { font-size: 15px; line-height: 22px; color: var(--text-secondary); }
+.alert__rows dd { margin: 0; font-size: 17px; line-height: 25px; font-weight: 500; }
+.alert__flag { color: var(--text-error); }
 .alert__note { font-size: 15px; line-height: 22px; color: var(--text-secondary); }
 .coldchain .more { margin-top: 12px; border-bottom: 0; }
 .readings dt, .readings dd { font-size: 17px; line-height: 25px; }
@@ -509,10 +502,11 @@ h1, h2, h3, .section__title { text-wrap: balance; }
 .notice--warn .notice__title { color: var(--text-error); }
 .notice__text { font-size: 15px; line-height: 22px; color: var(--text-secondary); }
 
-/* ---------- Key facts: up to three labelled facts that hold for the whole life of the passport ---------- */
-.keyfacts { margin: 0; }
-.keyfacts > div { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 10px 0; border-top: 1px solid rgba(255, 255, 255, 0.16); }
-.keyfacts > div:first-child { padding-top: 0; border-top: 0; }
-.keyfacts > div:last-child { padding-bottom: 0; }
-.keyfacts dt { font-size: 15px; line-height: 22px; color: rgba(255, 255, 255, 0.72); }
-.keyfacts dd { margin: 0; font-size: 17px; line-height: 25px; font-weight: 500; color: var(--gold); text-align: right; }
+
+/* ---------- Key fact: one headline fact under the photo; the details follow below ---------- */
+.fact { display: grid; gap: 4px; }
+.fact__figure { font-size: 40px; line-height: 40px; font-weight: 500; letter-spacing: -0.04em; color: var(--gold); }
+.fact__text { font-size: 15px; line-height: 22px; color: rgba(255, 255, 255, 0.72); }
+.fact__date { font-size: 15px; line-height: 22px; color: rgba(255, 255, 255, 0.72); }
+.highlight { margin-top: 24px; display: flex; gap: 24px; padding: 28px var(--gutter); background: var(--ink); color: var(--paper); }
+.highlight .fact { min-width: 0; }
