@@ -472,7 +472,6 @@ a.more__head .rowlink__icon { color: var(--ink); }
 .readings dt, .readings dd { font-size: 17px; line-height: 25px; }
 .readings dd { font-weight: 500; }
 .kv__row--flag dd { color: var(--text-error); }
-.form__alt { margin-top: 24px; font-size: 17px; line-height: 25px; }
 
 .ask-sheet { height: auto; max-height: calc(100dvh - 24px); }
 .ask-form { padding: 0 var(--gutter) max(24px, env(safe-area-inset-bottom)); overflow-y: auto; overscroll-behavior: contain; }
