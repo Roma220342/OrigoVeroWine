@@ -468,7 +468,7 @@ a.more__head .rowlink__icon { color: var(--ink); }
 .alert__value { font-size: 17px; line-height: 25px; }
 .alert__value strong { font-weight: 500; }
 .alert__note { font-size: 15px; line-height: 22px; color: var(--text-secondary); }
-.coldchain .more { margin-top: 12px; }
+.coldchain .more { margin-top: 12px; border-bottom: 0; }
 .readings dt, .readings dd { font-size: 17px; line-height: 25px; }
 .readings dd { font-weight: 500; }
 .kv__row--flag dd { color: var(--text-error); }
