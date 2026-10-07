@@ -486,3 +486,7 @@ h1, h2, h3, .section__title { text-wrap: balance; }
    Standalone list: .rowlink with a divider. Inside a block that sets its own rhythm: .rowlink--in. */
 .rowlink--in { padding: 0; border-bottom: 0; }
 .rowlink--in::after { inset: -10px 0; }
+
+/* ---------- Passport status ---------- */
+.verified__status { display: flex; align-items: center; gap: 4px; font-size: 15px; line-height: 22px; color: var(--text-secondary); }
+.verified__check { width: 18px; height: 18px; color: var(--text-primary); }
