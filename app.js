@@ -559,45 +559,4 @@
   });
   mapView.addEventListener('click', openMap);
   mapView.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openMap(); } });
-  /* ---------- Ask the brand: bottom sheet with the flagged reading already in the message ---------- */
-  const askSheet = $('#ask-sheet');
-  const askForm = $('#ask-form');
-  const askEmail = $('#ask-email');
-  const askEmailError = $('#ask-email-error');
-  const askStatus = $('#ask-status');
-  askSheet.setAttribute('tabindex', '-1');
-  let askClosing = false;
-  const openAsk = () => {
-    askClosing = false;
-    askStatus.textContent = '';
-    askSheet.showModal();
-    askSheet.focus({ preventScroll: true });
-    void askSheet.offsetHeight;
-    askSheet.classList.add('is-in');
-  };
-  const closeAsk = () => {
-    if (!askSheet.open || askClosing) return;
-    askClosing = true;
-    askSheet.classList.remove('is-in');
-    const done = () => { if (!askClosing) return; askClosing = false; askSheet.close(); $('#ask-open').focus({ preventScroll: true }); };
-    if (reduceMotion()) { done(); return; }
-    askSheet.addEventListener('transitionend', (e) => { if (e.target === askSheet && e.propertyName === 'transform') done(); }, { once: true });
-    setTimeout(done, 450);
-  };
-  $('#ask-open').addEventListener('click', openAsk);
-  $('#ask-close').addEventListener('click', closeAsk);
-  askSheet.addEventListener('click', (e) => { if (e.target === askSheet) closeAsk(); });
-  askSheet.addEventListener('cancel', (e) => { e.preventDefault(); closeAsk(); });
-  askSheet.addEventListener('close', () => askSheet.classList.remove('is-in'));
-  askEmail.addEventListener('input', () => { askEmailError.hidden = true; askEmail.closest('.field').classList.remove('is-invalid'); askEmail.removeAttribute('aria-invalid'); });
-  askForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const v = askEmail.value.trim();
-    if (v && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) {
-      askEmailError.hidden = false; askEmail.closest('.field').classList.add('is-invalid'); askEmail.setAttribute('aria-invalid', 'true'); askEmail.focus();
-      return;
-    }
-    askStatus.textContent = 'Sent to the brand. This is a demo, nothing was delivered.';
-  });
-
 })();

@@ -445,8 +445,7 @@ select.field__control {
   padding: 14px 0; border: 0; border-bottom: 1px solid var(--border-subtle); background: none;
   font: inherit; font-size: 17px; line-height: 25px; font-weight: 500; text-align: left; color: var(--text-primary); text-decoration: none; cursor: pointer;
 }
-.actions .rowlink:last-child, .rowlink--last { border-bottom: 0; }
-.rowlink:active { background: var(--surface-subtle); }
+.actions .rowlink:last-child, .rowlink:active { background: var(--surface-subtle); }
 .rowlink::after { content: ""; position: absolute; inset: -4px 0; } /* 44px touch area */
 .rowlink__icon { flex: none; }
 .icon.rowlink__icon { width: 20px; height: 20px; stroke-width: 1.8; }
@@ -473,11 +472,7 @@ a.more__head .rowlink__icon { color: var(--ink); }
 .readings dd { font-weight: 500; }
 .kv__row--flag dd { color: var(--text-error); }
 
-.ask-sheet { height: auto; max-height: calc(100dvh - 24px); }
-.ask-form { padding: 0 var(--gutter) max(24px, env(safe-area-inset-bottom)); overflow-y: auto; overscroll-behavior: contain; }
-.ask-form__lead { margin: 0 0 16px; color: var(--text-secondary); }
 
 /* Interaction polish from the web interface guidelines */
 a, button, summary, select, textarea, input { touch-action: manipulation; }
 h1, h2, h3, .section__title { text-wrap: balance; }
-.readings dd { font-variant-numeric: tabular-nums; }

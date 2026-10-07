@@ -229,7 +229,6 @@
               </dl>
             </div>
           </details>
-          <button class="rowlink rowlink--last" type="button" id="ask-open" aria-haspopup="dialog" aria-controls="ask-sheet"><span>Ask the brand about this reading</span><svg class="icon rowlink__icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
         </div>
       </section>
 
@@ -374,31 +373,6 @@
         <button class="nav-btn" type="button" id="map-next" aria-label="Next step"><svg class="glyph glyph--24" aria-hidden="true"><use href="#g-next"/></svg></button>
       </div>
     </section>
-  </dialog>
-
-  <!-- Ask the brand: a bottom sheet with the flagged reading already in the message -->
-  <dialog class="lang-sheet ask-sheet" id="ask-sheet" aria-labelledby="ask-title">
-    <div class="lang-sheet__grabber" aria-hidden="true"><span></span></div>
-    <header class="lang-sheet__head">
-      <h2 id="ask-title">Ask the brand</h2>
-      <button class="icon-btn" type="button" id="ask-close" aria-label="Close">
-        <svg class="glyph glyph--24" aria-hidden="true"><use href="#g-close"/></svg>
-      </button>
-    </header>
-    <form class="ask-form" id="ask-form" novalidate>
-      <p class="ask-form__lead">Your message already includes the flagged reading.</p>
-      <div class="field">
-        <label class="field__label" for="ask-message">Your message</label>
-        <textarea class="field__control is-filled" id="ask-message" name="message" rows="4" autocomplete="off">Passport SCT-WINE-001 shows one flagged temperature reading: 24.5 °C on 30 Jan 2026 (1 of 6 readings). Is this bottle fine to drink?</textarea>
-      </div>
-      <div class="field">
-        <label class="field__label" for="ask-email">Your email, so the brand can reply</label>
-        <input class="field__control" id="ask-email" name="email" type="email" inputmode="email" autocomplete="email" spellcheck="false" aria-describedby="ask-email-error">
-        <p class="field__error" id="ask-email-error" hidden>Enter a full email address, for example name@example.com</p>
-      </div>
-      <button class="btn" type="submit" id="ask-send">Send to the brand</button>
-      <p class="form__status" id="ask-status" role="status" aria-live="polite"></p>
-    </form>
   </dialog>
 
   <!-- Language list: bottom sheet opened by the EN button -->

@@ -2,7 +2,7 @@
 
 A mobile passport for Château Fontclair Saint-Émilion Grand Cru Classé 2019 (SCT-WINE-001), built from the Figma prototype `Wine / SCT-WINE-001` and the same static HTML, CSS and JavaScript as the battery passport. Open `index.html` through any static server.
 
-Content comes only from the product page on origovero.com. The wording of the cold chain explanation, the "Ask the brand" sheet and the arrow rules is ours and needs the client's approval.
+Content comes only from the product page on origovero.com. The wording of the cold chain explanation and the arrow rules is ours and needs the client's approval.
 
 ## What is different from the battery passport
 
@@ -12,8 +12,7 @@ Content comes only from the product page on origovero.com. The wording of the co
 | Actions | Cold chain (scrolls down this page, arrow down), I need assistance and Find a retailer (other sites, arrow up-right) |
 | Tasting & service | Black band with serving temperature and decanting, then Tasting, Serving, Pairings, Cellaring |
 | Journey | Seven steps; four in Bordeaux are spaced on a ring around the city, then Paris, Le Havre, New York. Step 6 is placed at Le Havre, the departure port named in the step text |
-| Cold chain | Closes the Journey: the flagged reading (24.5 °C, 30 Jan 2026) in a tinted card, all six readings on request, and a row that opens "Ask the brand" |
-| Ask the brand | Bottom sheet with the reading already in the message. It is a demo: nothing is sent |
+| Cold chain | Closes the Journey: the flagged reading (24.5 °C, 30 Jan 2026) in a tinted card, all six readings on request |
 | Specifications | Alcohol, bottle size, vintage, rows, and the EU Wine Label link |
 | Spotlight | Video title and the 2019 Vintage Technical Sheet link |
 
@@ -26,4 +25,4 @@ Content comes only from the product page on origovero.com. The wording of the co
 
 ## Behaviour and checks
 
-Scrollspy tabs, animated accordions, map with one point per step and a camera that follows the product, Replay, full screen step viewer, language and ask sheets. Checked with Playwright at 390 px: no console errors, no horizontal scroll.
+Scrollspy tabs, animated accordions, map with one point per step and a camera that follows the product, Replay, full screen step viewer, language sheet. Checked with Playwright at 390 px: no console errors, no horizontal scroll.
