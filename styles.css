@@ -480,4 +480,4 @@ a.more__head .rowlink__icon { color: var(--ink); }
 /* Interaction polish from the web interface guidelines */
 a, button, summary, select, textarea, input { touch-action: manipulation; }
 h1, h2, h3, .section__title { text-wrap: balance; }
-.readings dd, .figure__num, .block__num, .fact__figure { font-variant-numeric: tabular-nums; }
+.readings dd { font-variant-numeric: tabular-nums; }
