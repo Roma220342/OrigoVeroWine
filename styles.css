@@ -235,7 +235,7 @@ h1 { font-weight: 400; }
 /* ---------- Expandable rows (Specifications): the preview is secondary, the facts open below ---------- */
 .more { border-bottom: 1px solid var(--border-subtle); }
 .rows > .more:last-child { border-bottom: 0; }
-.more__head { display: flex; gap: 16px; align-items: flex-start; padding: 12px 0; cursor: pointer; list-style: none; border-radius: var(--r); }
+.more__head { display: flex; gap: 16px; align-items: center; min-height: 56px; padding: 8px 0; cursor: pointer; list-style: none; border-radius: var(--r); }
 .more__head::-webkit-details-marker { display: none; }
 .more__head:active { background: var(--surface-subtle); }
 .more__label { flex: 0 0 110px; font-size: 15px; line-height: 22px; color: var(--text-secondary); }
@@ -305,9 +305,10 @@ h1 { font-weight: 400; }
 /* ---------- FAQ ---------- */
 .faq { border-bottom: 1px solid var(--border-subtle); }
 .faq:last-child { border-bottom: 0; }
+.faq:last-child .faq__q { min-height: 56px; }
 .faq__q {
   display: flex; align-items: center; justify-content: space-between; gap: 16px; list-style: none; cursor: pointer;
-  padding: 16px var(--bleed); margin-inline: calc(var(--bleed) * -1); border-radius: var(--r);
+  min-height: 55px; padding: 0 var(--bleed); margin-inline: calc(var(--bleed) * -1); border-radius: var(--r);
   font-size: 17px; line-height: 25px; font-weight: 500;
 }
 .faq__q::-webkit-details-marker { display: none; }
@@ -322,7 +323,7 @@ h1 { font-weight: 400; }
 .field { display: grid; gap: 4px; margin-bottom: 24px; }
 .field__label { font-size: 15px; line-height: 22px; font-weight: 500; }
 .field__control {
-  width: 100%; min-height: 51px; padding: 12px 0;
+  width: 100%; min-height: 56px; padding: 12px 0;
   border: 0; border-bottom: 1px solid var(--border-default); border-radius: 0; background: none;
   font-size: 17px; line-height: 25px; color: var(--text-secondary);
   appearance: none; resize: none; overflow: hidden;
@@ -339,7 +340,7 @@ select.field__control {
 .field__error { font-size: 15px; line-height: 22px; color: var(--text-error); }
 
 .btn {
-  display: flex; align-items: center; justify-content: center; width: 100%; min-height: 58px; padding: 16px;
+  display: flex; align-items: center; justify-content: center; width: 100%; min-height: 56px; padding: 0 16px;
   border: 0; border-radius: var(--r);
   background: var(--action-primary); color: var(--text-on-accent);
   font-size: 17px; line-height: 25px; font-weight: 500;
@@ -429,19 +430,19 @@ select.field__control {
 
 /* ---------- Wine passport ---------- */
 .photo--contain img { object-fit: contain; }
-.actions { padding: 24px var(--gutter) 0; }
+.links { display: grid; }
+.links .rowlink:last-child { border-bottom: 0; }
 /* A row that goes somewhere. The arrow says where: down this page, to another site, to the next screen. */
 .rowlink {
   position: relative; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%;
-  padding: 14px 0; border: 0; border-bottom: 1px solid var(--border-subtle); background: none;
+  min-height: 48px; padding: 0; border: 0; border-bottom: 1px solid var(--border-subtle); background: none;
   font: inherit; font-size: 17px; line-height: 25px; font-weight: 500; text-align: left; color: var(--text-primary); text-decoration: none; cursor: pointer;
 }
-.actions .rowlink:last-child { border-bottom: 0; }
 .rowlink:active { background: var(--surface-subtle); }
 .rowlink::after { content: ""; position: absolute; inset: -4px 0; } /* 44px touch area */
 .rowlink__icon { flex: none; }
 .icon.rowlink__icon { width: 20px; height: 20px; stroke-width: 1.8; }
-a.more__head { color: inherit; text-decoration: none; }
+a.more__head { min-height: 48px; color: inherit; text-decoration: none; }
 a.more__head .more__value { color: var(--text-primary); font-weight: 500; } /* a link reads like the other links: 17/500, ink */
 a.more__head .rowlink__icon { color: var(--ink); }
 
@@ -476,7 +477,7 @@ h1, h2, h3, .section__title { text-wrap: balance; }
 /* ---------- One external link ----------
    Text on the left, the arrow at the right edge, 17/500, no underline. Same everywhere.
    Standalone list: .rowlink with a divider. Inside a block that sets its own rhythm: .rowlink--in. */
-.rowlink--in { padding: 0; border-bottom: 0; }
+.rowlink--in { min-height: 0; padding: 0; border-bottom: 0; }
 .rowlink--in::after { inset: -10px 0; }
 
 /* ---------- Passport status ---------- */
@@ -485,6 +486,8 @@ h1, h2, h3, .section__title { text-wrap: balance; }
 
 /* ---------- Video card: plays in place ---------- */
 .spotlight { display: grid; gap: 32px; }
+.spotlight .pairs { gap: 32px; }
+.spotlight .rowlink--in { min-height: 48px; }
 .video { margin: 0; display: grid; gap: 12px; }
 .video__play { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; padding: 0; border: 0; border-radius: var(--r); background: var(--ink); color: var(--paper); cursor: pointer; }
 .video__btn { position: absolute; inset: 0; margin: auto; width: 56px; height: 56px; display: grid; place-items: center; border-radius: 50%; background: var(--paper); color: var(--ink); }
