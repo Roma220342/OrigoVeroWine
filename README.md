@@ -8,9 +8,10 @@ Content comes only from the product page on origovero.com. The wording of the co
 
 | Part | Wine |
 |---|---|
-| Key fact | Drinking window 2024–2040, peak 2026–2032 |
+| Key fact | What it is: 85% Merlot, with 15% Cabernet Franc under it. The region, class and vintage are already in the title |
 | Actions | Cold chain (scrolls down this page, arrow down), I need assistance and Find a retailer (other sites, arrow up-right) |
-| Tasting & service | Black band with serving temperature and decanting, then Tasting, Serving, Pairings, Cellaring |
+| Details | Figures, rows, the EU Wine Label link, then the tasting notes and pairings |
+| Serve & store | After the facts: serve at 16–18 °C, decant 2 hours, serving and cellaring notes (with the drinking window 2024–2040) |
 | Journey | Seven steps; four in Bordeaux are spaced on a ring around the city, then Paris, Le Havre, New York. Step 6 is placed at Le Havre, the departure port named in the step text |
 | Cold chain | Closes the Journey: the flagged reading (24.5 °C, 30 Jan 2026) in a tinted card, all six readings on request |
 | Specifications | Alcohol, bottle size, vintage, rows, and the EU Wine Label link |
