@@ -495,6 +495,8 @@
   let full = null;
   let cardH = 250;
   let current = 0;
+  let moveId = 0;
+  let inflight = false;
   let mapClosing = false;
 
   const selectStep = (i, { instant = false } = {}) => {
@@ -512,9 +514,13 @@
       const ms = instant ? 0 : full.legMs(full.at(), s);
       // The ink trail shows the way travelled up to the selected step, and follows the dot between steps.
       const base = full.pts.slice(0, Math.min(prev, current) + 1);
+      const id = (moveId += 1);
       const target = current;
-      full.move({ lat: s.lat, lng: s.lng }, ms, () => full.trail([...base, [full.at().lat, full.at().lng]]))
-        .then(() => { if (current === target) full.trail(full.pts.slice(0, target + 1)); });
+      // A tap during a move cancels it and continues from the step we were heading to, so the trail never draws a stray segment.
+      if (inflight) full.move({ lat: full.pts[prev][0], lng: full.pts[prev][1] }, 0);
+      inflight = ms > 0;
+      full.move({ lat: s.lat, lng: s.lng }, ms, () => { if (id === moveId) full.trail([...base, [full.at().lat, full.at().lng]]); }, () => id !== moveId)
+        .then(() => { if (id === moveId) { inflight = false; full.trail(full.pts.slice(0, target + 1)); } });
       if (!instant) full.focus(current, true, ms);
     }
   };
