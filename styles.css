@@ -233,7 +233,7 @@ h1 { font-weight: 400; }
 .figure__line { display: grid; gap: 2px; }
 .figure__num { font-size: 40px; line-height: 40px; font-weight: 500; letter-spacing: -0.04em; }
 .figure__unit { font-size: 15px; line-height: 22px; font-weight: 500; }
-.kv__sub { margin-left: 6px; font-size: 15px; font-weight: 400; color: var(--text-secondary); white-space: nowrap; }
+.kv__sub { margin-left: 6px; font-size: 15px; line-height: 22px; font-weight: 400; color: var(--text-secondary); white-space: nowrap; }
 @media (max-width: 340px) { .figures { grid-template-columns: repeat(3, minmax(0, 1fr)); } .figure dt { white-space: normal; min-height: 46px; } .figure__num { font-size: 34px; line-height: 36px; } }
 
 /* ---------- Expandable rows (Specifications): the preview is secondary, the facts open below ---------- */
@@ -465,7 +465,7 @@ a.more__head .rowlink__icon { color: var(--ink); }
 .coldchain { margin-top: 48px; scroll-margin-top: calc(var(--header-h) + 8px); }
 .coldchain .group { margin: 0 0 12px; }
 .alert { display: grid; gap: 4px; padding: 12px; border-radius: var(--r); background: var(--surface-subtle); }
-.alert__status { font-weight: 500; color: var(--text-error); }
+.alert__status { font-weight: 500; line-height: 25px; color: var(--text-error); }
 .alert__value { font-size: 17px; line-height: 25px; }
 .alert__value strong { font-weight: 500; }
 .alert__note { font-size: 15px; line-height: 22px; color: var(--text-secondary); }
