@@ -288,13 +288,25 @@
         </div>
       </section>
 
-      <!-- Spotlight: two brand items in one pattern, a label and then the title -->
+      <!-- In the spotlight: a video card that plays in place, then the winery's own sheet -->
       <section class="section" id="spotlight" aria-labelledby="spotlight-title">
         <h2 class="section__title" id="spotlight-title">In the spotlight</h2>
-        <dl class="pairs pairs--loose section__body">
-          <div><dt>Video, 6:42, <time datetime="2020-11-12">12 Nov 2020</time></dt><dd>Harvest 2019: Inside the Chai at Château Fontclair</dd></div>
-          <div><dt>Official brand communication, <time datetime="2020-03-01">1 Mar 2020</time></dt><dd><a class="rowlink rowlink--in" href="https://chateaufontclair.com/vintage/2019" target="_blank" rel="noopener"><span>2019 Vintage Technical Sheet</span><svg class="glyph glyph--24 rowlink__icon" aria-hidden="true"><use href="#g-ext"/></svg><span class="sr-only"> (opens another site)</span></a></dd></div>
-        </dl>
+        <p class="section__lead">Expert coverage, video features and verified customer voices</p>
+        <div class="section__body spotlight">
+          <figure class="video" data-video-id="fontclair-harvest">
+            <button class="video__play" type="button" aria-label="Play video, 6 minutes 42 seconds: Harvest 2019, Inside the Chai at Château Fontclair">
+              <span class="video__btn"><svg class="video__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span>
+              <span class="video__time" aria-hidden="true">6:42</span>
+            </button>
+            <figcaption class="video__cap">
+              <span class="video__title">Harvest 2019: Inside the Chai at Château Fontclair</span>
+              <span class="video__meta">Château Fontclair, <time datetime="2020-11-12">12 Nov 2020</time></span>
+            </figcaption>
+          </figure>
+          <dl class="pairs">
+            <div><dt>Official brand communication, <time datetime="2020-03-01">1 Mar 2020</time></dt><dd><a class="rowlink rowlink--in" href="https://chateaufontclair.com/vintage/2019" target="_blank" rel="noopener"><span>2019 Vintage Technical Sheet</span><svg class="glyph glyph--24 rowlink__icon" aria-hidden="true"><use href="#g-ext"/></svg><span class="sr-only"> (opens another site)</span></a></dd></div>
+          </dl>
+        </div>
       </section>
 
       <!-- Good to know -->
@@ -323,16 +335,17 @@
       <!-- Report an issue -->
       <section class="section" id="report" aria-labelledby="report-title">
         <h2 class="section__title" id="report-title">Report an issue</h2>
-        <p class="section__lead">Tell us what’s wrong and we’ll pass it to the brand.</p>
+        <p class="section__lead">Tell us what’s wrong or what you think, and we’ll pass it to the brand.</p>
         <form class="section__body form" id="report-form" novalidate>
           <div class="field">
-            <label class="field__label" for="reason">What’s the problem?</label>
+            <label class="field__label" for="reason">What is it about?</label>
             <select class="field__control" id="reason" name="reason" autocomplete="off" required aria-describedby="reason-error">
               <option value="" disabled selected hidden>Choose a reason</option>
               <option>Arrived damaged</option>
               <option>Not as described</option>
               <option>Something on this page is wrong</option>
               <option>I don’t think this is genuine</option>
+              <option>Share feedback</option>
               <option>Something else</option>
             </select>
             <p class="field__error" id="reason-error" hidden>Choose a reason before sending.</p>

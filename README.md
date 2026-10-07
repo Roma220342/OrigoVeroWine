@@ -14,7 +14,7 @@ Content comes only from the product page on origovero.com. The wording of the co
 | Journey | Seven steps; four in Bordeaux are spaced on a ring around the city, then Paris, Le Havre, New York. Step 6 is placed at Le Havre, the departure port named in the step text |
 | Cold chain | Closes the Journey: the flagged reading (24.5 °C, 30 Jan 2026) in a tinted card, all six readings on request |
 | Specifications | Alcohol, bottle size, vintage, rows, and the EU Wine Label link |
-| Spotlight | Video title and the 2019 Vintage Technical Sheet link |
+| In the spotlight | Client strapline kept; a video card that plays in place (the client's video id is a placeholder, `data-video-id` in `index.html`), and the 2019 Vintage Technical Sheet, the winery's own document, as a link row |
 
 ## Open questions for the client
 
@@ -26,3 +26,7 @@ Content comes only from the product page on origovero.com. The wording of the co
 ## Behaviour and checks
 
 Scrollspy tabs, animated accordions, map with one point per step and a camera that follows the product, Replay, full screen step viewer, language sheet. Checked with Playwright at 390 px: no console errors, no horizontal scroll.
+
+## Feedback and reviews
+
+The report form also takes feedback: the reason "Share feedback" goes to the brand privately, in the same place on all three passports. Public reviews are not shown. Questions for the client: are public ratings wanted at all (the EU passport content is an authoritative record from the operator, and reviews are not part of it), how would a review be tied to the item (scanning the item's own QR proves possession), and where would they be aggregated (the "All batches of this model" page looks like the natural place).

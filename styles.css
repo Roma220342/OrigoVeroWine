@@ -490,3 +490,16 @@ h1, h2, h3, .section__title { text-wrap: balance; }
 /* ---------- Passport status ---------- */
 .verified__status { display: flex; align-items: center; gap: 4px; font-size: 15px; line-height: 22px; color: var(--text-secondary); }
 .verified__check { width: 18px; height: 18px; color: var(--text-primary); }
+
+/* ---------- Video card: plays in place ---------- */
+.spotlight { display: grid; gap: 32px; }
+.video { margin: 0; display: grid; gap: 12px; }
+.video__play { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; padding: 0; border: 0; border-radius: var(--r); background: var(--ink); color: var(--paper); cursor: pointer; }
+.video__btn { position: absolute; inset: 0; margin: auto; width: 56px; height: 56px; display: grid; place-items: center; border-radius: 50%; background: var(--paper); color: var(--ink); }
+.video__icon { width: 24px; height: 24px; fill: currentColor; }
+.video__time { position: absolute; right: 12px; bottom: 12px; font-size: 15px; line-height: 22px; }
+.video__play:active .video__btn { background: var(--surface-subtle); }
+.video__frame { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: var(--r); background: var(--ink); }
+.video__cap { display: grid; gap: 2px; }
+.video__title { font-size: 17px; line-height: 25px; font-weight: 500; }
+.video__meta { font-size: 15px; line-height: 22px; color: var(--text-secondary); }

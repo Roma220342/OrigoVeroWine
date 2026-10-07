@@ -569,4 +569,17 @@
   });
   mapView.addEventListener('click', openMap);
   mapView.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openMap(); } });
+  /* ---------- Video: nothing loads until the reader taps play, then the player replaces the card in place ---------- */
+  $$('.video').forEach((fig) => {
+    const btn = $('.video__play', fig);
+    btn.addEventListener('click', () => {
+      const frame = document.createElement('iframe');
+      frame.className = 'video__frame';
+      frame.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(fig.dataset.videoId) + '?autoplay=1&rel=0';
+      frame.title = $('.video__title', fig).textContent.trim();
+      frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      frame.allowFullscreen = true;
+      btn.replaceWith(frame);
+    });
+  });
 })();
