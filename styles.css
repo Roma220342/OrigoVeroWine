@@ -448,11 +448,10 @@ select.field__control {
 .actions .rowlink:last-child, .rowlink--last { border-bottom: 0; }
 .rowlink:active { background: var(--surface-subtle); }
 .rowlink::after { content: ""; position: absolute; inset: -4px 0; } /* 44px touch area */
-.rowlink__icon { width: 20px; height: 20px; flex: none; stroke-width: 1.8; }
-.rowlink__icon--down { transform: rotate(90deg); }
-.rowlink__icon--ext { transform: rotate(-45deg); }
+.rowlink__icon { flex: none; }
+.icon.rowlink__icon { width: 20px; height: 20px; stroke-width: 1.8; }
 a.more__head { color: inherit; text-decoration: none; }
-a.more__head .rowlink__icon { margin-top: 2px; color: var(--ink); }
+a.more__head .rowlink__icon { color: var(--ink); }
 
 .serve { margin-top: 24px; display: flex; gap: 24px; padding: 32px var(--gutter) 20px; background: var(--ink); color: var(--paper); }
 .serve .fact { min-width: 0; }
