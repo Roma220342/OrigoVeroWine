@@ -479,3 +479,12 @@ a, button, summary, select, textarea, input { touch-action: manipulation; }
 h1, h2, h3, .section__title { text-wrap: balance; }
 
 .rowlink--last { border-bottom: 0; }
+
+/* ---------- External links: one icon, two forms ----------
+   Standalone (a destination on its own line): no underline, icon after the text, same type as .rowlink.
+   Inside a sentence: underlined words, same icon after them. The arrow is never a text character. */
+.extlink { position: relative; display: inline-flex; align-items: center; gap: 0; color: var(--text-primary); text-decoration: none; }
+.extlink:active { color: var(--text-secondary); }
+.extlink::after { content: ""; position: absolute; inset: -12px -6px; }
+.extlink__icon { width: 24px; height: 24px; margin-right: -4px; }
+.link .extlink__icon { display: inline-block; width: 20px; height: 20px; margin: 0 -2px 0 2px; vertical-align: -4px; }
